@@ -27,17 +27,3 @@ spring:
     show-sql: true
 
 
-#  security:
-#    user:
-#      name: test
-#      password: 1234   
-  security:
-    oauth2:
-      client:
-        registration:
-          google: # /oauth2/authorization/google 이 주소를 동작하게 한다.
-            client-id: 195440536394-vj07s0bb36sr27qoaqjuv5klu2u9js0e.apps.googleusercontent.com
-            client-secret: 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
-            scope:
-            - email
-            - profile
