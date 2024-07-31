@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
+      enabled: true
+    
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/sign_lang?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false
+    username: bibimbab
+    password: bibim1234
+    
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+
+#  security:
+#    user:
+#      name: test
+#      password: 1234   
+  security:
+    oauth2:
+      client:
+        registration:
+          google: # /oauth2/authorization/google 이 주소를 동작하게 한다.
+            client-id: 195440536394-vj07s0bb36sr27qoaqjuv5klu2u9js0e.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+            - email
+            - profile
